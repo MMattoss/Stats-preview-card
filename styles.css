@@ -1,0 +1,155 @@
+:root{
+	--main-background: hsl(233, 47%, 7%);
+	--card-background: hsl(244, 38%, 16%);
+	--accent: hsl(277, 64%, 61%);
+	--heading: hsl(0, 0%, 100%);
+	--main-paragraph: hsla(0, 0%, 100%, 0.75);
+	--stats: hsla(0, 0%, 100%, 0.6);
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: var(--main-background);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Inter', sans-serif;
+	height: 100vh;
+}
+
+.mobile{
+	display: none;
+	width: 100%;
+}
+
+h1{
+	font-size: 40px;
+	color: var(--heading);
+}
+
+h2{
+	font-size: 30px;
+	color: var(--heading);
+}
+
+p{
+	color: var(--main-paragraph);
+	line-height: 1.8;
+	font-weight: 300;
+	padding-right: 1rem;
+}
+
+.card{
+	background-color: var(--card-background);
+	display: flex;
+	width: 90%;
+	height: 500px;
+	border-radius: 10px;
+	overflow: hidden; /* Adicionamos esta linha para esconder os elementos que ultrapassam o tamanho do card */
+}
+
+.left{
+	display: grid;
+	padding: 5rem 7rem 5rem 5rem;
+}
+
+.insights{
+	color: var(--accent);
+}
+
+.right{
+	background: url(images/image-header-desktop.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-color: hsla(277, 64%, 40%, 0.8); 
+  	background-blend-mode: overlay; 
+}
+
+.left, .right{
+	width: 50%;
+}
+
+.data{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	align-self: flex-end; /* Alteramos de "end" para "flex-end" para alinhar os elementos no final do card */
+}
+
+.column-div{
+	display: flex;
+	flex-direction: column;
+}
+
+.column-div span{
+	font-family: 'Lexend Deca', sans-serif;
+	font-weight: 400;
+	color: var(--stats);
+}
+
+@media(max-width: 760px){
+	body{
+		height: 200vh;
+	}
+
+	h1{
+		font-size: 29px;
+	}
+
+	h2{
+		font-size: 29px;
+	}
+
+	p{
+		font-size: 15px;
+	}
+
+	.data span{
+		font-size: 19px;
+	}
+
+	.card{
+		flex-direction: column-reverse;
+		height: unset;
+	}
+
+	.right, .left{
+		width: 100%;
+	}
+
+	.right{
+		background: url(images/image-header-mobile.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-color: hsla(277, 64%, 40%, 0.8); 
+		background-blend-mode: overlay; 
+		height: 50vh;
+		border-radius: unset;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+	}
+
+	.left{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem;
+		text-align: center;
+		gap: 30px;
+	}
+
+	.data{
+		flex-direction: column;
+		gap: 50px;
+	}
+
+}
